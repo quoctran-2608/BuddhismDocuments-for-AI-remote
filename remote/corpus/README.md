@@ -4,17 +4,22 @@ This directory is a deterministic, read-only export of the existing SQLite
 index. It is an access adapter, not a second research system.
 
 1. Read `manifest.json` and verify actual corpus coverage and pinned SHAs.
-2. Search UTF-8 text only under `records/`.
-3. Treat `export_role: "primary"` as a hit. Rows marked `context_overlap`
+2. Read `locator/manifest.json`, normalize the query or identifier as declared,
+   calculate its bucket, and fetch the listed locator part file(s).
+3. Resolve locator shard indexes through the root manifest `shards` array.
+   GitHub Code Search is optional only and is never required.
+4. Fetch candidate shards and verify the actual query in exported content.
+5. Treat `export_role: "primary"` as a hit. Rows marked `context_overlap`
    only preserve two neighboring records across shard boundaries; deduplicate
    all rows by `id`.
-4. Read provenance on the record itself.
-5. Inspect `relations/` and `variants/` when the research question needs them.
-6. Apply the evidence hierarchy and witness separation from the repository
+6. Read provenance on the record itself.
+7. Inspect `relations/` and `variants/` when the research question needs them.
+8. Apply the evidence hierarchy and witness separation from the repository
    research skill.
 
 In the manifest, `shard_fields` names the columns used by each compact row in
-`shards`.
+`shards`. Locator results are candidate file locations, not evidence or
+scholarly conclusions.
 
 Files are JSON Lines, ordered and sharded at record boundaries. If the export
 does not contain enough evidence, report:
