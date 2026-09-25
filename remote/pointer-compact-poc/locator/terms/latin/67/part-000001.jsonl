@@ -1,0 +1,1 @@
+{"key":"rājamatta","query_kind":"term","pointer_count":2,"pointer_refs":[{"pointer_id":"41e56271f4e7a98369963777a84d63ec406b5494706e0358fb72cdff45eaae7e","rank":1,"score":185,"match_reasons":["fts","corpus-lemma"]},{"pointer_id":"14acb6a18780bdc1517b36fc008daccd24621c43a31f33c5ba756cf67e88f25f","rank":2,"score":130,"match_reasons":["fts","corpus-lemma"]}]}

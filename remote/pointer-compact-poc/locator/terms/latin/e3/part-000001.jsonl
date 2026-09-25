@@ -1,0 +1,1 @@
+{"key":"saddhammavaṃsakovida","query_kind":"term","pointer_count":2,"pointer_refs":[{"pointer_id":"5f7cb86c8323c9ff05a2203ad1b8fb0aaa6022bcad5eb56271458fc9181f3c0a","rank":1,"score":130,"match_reasons":["fts","corpus-lemma"]},{"pointer_id":"bac15582816dbfd467c9bce02352c84ea6dd126f2c030d6a1c70cbf9a128be72","rank":2,"score":125,"match_reasons":["fts","corpus-lemma"]}]}
