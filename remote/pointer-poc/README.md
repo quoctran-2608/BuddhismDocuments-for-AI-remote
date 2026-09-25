@@ -9,13 +9,16 @@ second search engine.
    row.
 3. Follow pointers in rank order: open `repository` at `source_sha`, then open
    `source_path` directly in GitHub.
-4. Use `work_id`, `segment_id`, and `sequence_no` to locate the passage in the
+4. When available, compare `source_blob_sha` with the Git blob ID reported for
+   that pinned source file.
+5. Use `work_id`, `segment_id`, and `sequence_no` to locate the passage in the
    original file. Verify wording, context, provenance, text role, and witness
    in that source before making a finding.
 
-Pointer rank only decides which source file to open first. It is not evidence
-and does not override user scope, evidence hierarchy, text role, witness
-separation, or provenance. GitHub Code Search is not required.
+Pointers retain the existing shared ranking, but this POC first keeps the best
+distinct `(work_id, source_path)` candidate within each corpus. It is not
+evidence and does not override user scope, evidence hierarchy, text role,
+witness separation, or provenance. GitHub Code Search is not required.
 
 If the listed pointers cannot establish a claim, report:
 
